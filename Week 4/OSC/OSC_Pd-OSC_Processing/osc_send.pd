@@ -1,0 +1,52 @@
+#N canvas 183 91 965 458 10;
+#X declare -lib mrpeach;
+#X obj 307 31 import mrpeach;
+#X obj 75 97 cnv 15 800 300 empty empty SEND_OSC 20 12 0 14 -256468
+-66577 0;
+#X obj 94 339 udpsend;
+#X msg 94 156 connect localhost 6666;
+#X msg 106 182 disconnect;
+#X obj 147 314 packOSC;
+#X text 205 313 pack message as a byte array;
+#X msg 147 262 send /test \$1;
+#X obj 147 216 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 280 215 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1900 0;
+#X msg 277 262 send /monkeys \$1;
+#X text 146 342 send OSC;
+#X text 386 264 *;
+#X text 234 262 *;
+#X text 405 24 add mrpeach objects.;
+#X text 404 39 ADD TO PATCHES SENDING OR RECEIVING OSC!;
+#X text 629 348 * OSC messages are prefixed with a /;
+#X text 629 366 * Message variables are prefixed a $;
+#X obj 404 119 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 448 145 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9100 0;
+#X floatatom 505 171 5 0 0 0 - - -;
+#X obj 445 239 pack \$1 \$2 \$3;
+#X obj 445 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 532 239 pack the numbers into a list;
+#X text 476 201 the bang allows cold inlets to control output;
+#X text 530 116 \$1;
+#X text 587 145 \$2;
+#X text 544 171 \$3;
+#X msg 445 266 send /multiples \$1 \$2 \$3;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 18 0 21 0;
+#X connect 19 0 21 1;
+#X connect 19 0 22 0;
+#X connect 20 0 21 2;
+#X connect 20 0 22 0;
+#X connect 21 0 28 0;
+#X connect 22 0 21 0;
+#X connect 28 0 5 0;

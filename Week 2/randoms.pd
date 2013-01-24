@@ -1,0 +1,60 @@
+#N canvas 228 37 955 252 10;
+#X obj -8 -135 cnv 15 200 220 empty empty RANDOM 20 12 0 14 -128961
+-1 0;
+#X obj 446 -133 cnv 15 220 220 empty empty DRUNK 20 12 0 14 -257985
+-1 0;
+#X obj 467 -95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 467 18 drunk 10;
+#X floatatom 542 2 5 0 0 0 - - -;
+#X floatatom 467 48 5 0 0 0 - - -;
+#X obj 467 -69 metro 500;
+#X floatatom 518 -94 5 0 0 0 - - -;
+#X text 582 0 step size;
+#X msg 489 -42 50;
+#X floatatom 528 -41 5 0 0 0 - - -;
+#X text 568 -41 upper limit;
+#X obj 219 -132 cnv 15 200 220 empty empty SEED 20 12 0 14 -199745
+-1 0;
+#X obj 238 9 random 100;
+#X msg 318 -34 seed 10;
+#X floatatom 238 43 5 0 0 0 - - -;
+#X obj 238 -61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 238 -33 metro 500;
+#X obj 15 3 random 100;
+#X floatatom 15 37 5 0 0 0 - - -;
+#X obj 15 -67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 -39 metro 500;
+#X floatatom 84 -22 5 0 0 0 - - -;
+#X text 126 -22 limit;
+#X text 236 -108 Predictable randomness... Follows same sequence;
+#X obj 693 -133 cnv 15 220 220 empty empty RANDOM_FLOAT 20 12 0 14
+-261383 -1 0;
+#X floatatom 714 13 5 0 0 0 - - -;
+#X obj 714 -63 metro 1000;
+#X obj 714 -21 randomF 100;
+#X obj 714 -89 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 786 -49 5 0 0 0 - - -;
+#X text 821 -48 limit (shift + drag up/down to fine tune);
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 2;
+#X connect 6 0 3 0;
+#X connect 7 0 6 1;
+#X connect 9 0 3 1;
+#X connect 10 0 3 1;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 18 1;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 29 0 27 0;
+#X connect 30 0 28 1;

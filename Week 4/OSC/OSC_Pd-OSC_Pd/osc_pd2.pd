@@ -1,0 +1,60 @@
+#N canvas 417 22 967 682 10;
+#X declare -lib mrpeach;
+#X obj 287 11 import mrpeach;
+#X obj 75 97 cnv 15 400 500 empty empty SEND_MULTIPLE_NUMBERS 20 12
+0 14 -256468 -66577 0;
+#X obj 485 96 cnv 15 400 300 empty empty RECEIVE_OSC 20 12 0 14 -47266
+-1 0;
+#X obj 94 549 udpsend;
+#X msg 94 156 connect localhost 6666;
+#X msg 106 182 disconnect;
+#X obj 122 497 packOSC;
+#X text 180 496 pack message as a byte array;
+#X obj 122 246 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X obj 140 272 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6000 0;
+#X obj 526 144 udpreceive 6666;
+#X obj 526 178 unpackOSC;
+#X obj 526 344 print;
+#X floatatom 538 298 5 0 0 0 - - -;
+#X text 385 4 add mrpeach objects. ADD TO PATCHES SENDING OR RECEIVING
+OSC!;
+#X text 146 552 send OSC;
+#X text 243 558 * OSC messages are prefixed with a / * Message variables
+are prefixed a $;
+#X text 590 176 unpack incoming byte array;
+#X text 662 229 route accordung to OSC name;
+#X text 566 345 print to console;
+#X floatatom 197 298 5 0 0 0 - - -;
+#X obj 122 382 pack \$1 \$2 \$3;
+#X obj 137 352 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 122 424 send /multiples \$1 \$2 \$3;
+#X text 214 382 pack the numbers into a list;
+#X text 168 348 the bang allows cold inlets to control output;
+#X text 248 243 \$1;
+#X text 279 272 \$2;
+#X text 236 298 \$3;
+#X obj 538 230 routeOSC /multiples;
+#X obj 538 265 unpack \$1 \$2 \$3;
+#X floatatom 581 298 5 0 0 0 - - -;
+#X floatatom 625 297 5 0 0 0 - - -;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 8 0 21 0;
+#X connect 9 0 21 1;
+#X connect 9 0 22 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 29 0;
+#X connect 20 0 21 2;
+#X connect 20 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 23 0 6 0;
+#X connect 29 0 30 0;
+#X connect 30 0 13 0;
+#X connect 30 1 31 0;
+#X connect 30 2 32 0;

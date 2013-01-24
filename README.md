@@ -1,0 +1,2 @@
+# About this repository
+This repository contains samples of code created for student use in the course, Open Source 3D Fabrication (IDA3), which took place in 2012 at the Maryland Institute College of Art. 

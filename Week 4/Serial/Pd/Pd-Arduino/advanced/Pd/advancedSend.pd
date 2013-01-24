@@ -1,0 +1,42 @@
+#N canvas 166 278 1021 327 10;
+#X obj -871 -197 cnv 15 440 260 empty empty SETUP 20 12 0 14 -204800
+-66577 0;
+#X msg -715 -126 devices;
+#X msg -654 -126 open 2;
+#X msg -655 -83 close;
+#X obj -715 -42 comport 2 9600;
+#X text -599 -127 Arduino's port number;
+#X text -619 -43 port can also be set here;
+#X obj -805 -81 r arduinoOut;
+#X text -600 -148;
+#X obj -419 -196 cnv 15 500 260 empty empty MANAGE_OUTPUT 20 12 0 14
+-134133 -66577 0;
+#X floatatom -212 -114 5 0 0 0 - - -;
+#X floatatom -175 -114 5 0 0 0 - - -;
+#X obj -192 -78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -135 -86 bang is needed by cold outlets;
+#X text -133 -68 to force output;
+#X text -367 -43 create a list from input;
+#X obj -212 15 s arduinoOut;
+#X obj -212 -42 pack \$1 \$2;
+#X msg -212 -14 \$1 \, \$2;
+#X text -381 -16 reorder it into 2 messages;
+#X text -130 16 send to comport;
+#X obj -212 -148 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -192 -149 force output;
+#X text -263 -116 input 1;
+#X text -138 -114 input 2;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 7 0 4 0;
+#X connect 10 0 17 0;
+#X connect 11 0 12 0;
+#X connect 11 0 17 1;
+#X connect 12 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 21 0 10 0;
+#X connect 21 0 11 0;

@@ -1,0 +1,80 @@
+#N canvas 144 31 1045 474 10;
+#X obj 12 -197 cnv 15 280 413 empty empty LOAD_SOUND_INTO_ARRAY_FIRST
+20 12 0 14 -262130 -66577 0;
+#X obj 36 -90 soundfiler;
+#X floatatom 36 -59 5 0 0 0 - - -;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array quack 6891 float 2;
+#X coords 0 1 6891 -1 200 140 1;
+#X restore 52 50 graph;
+#X msg 36 -121 read -resize ./samples/quack.wav quack;
+#X text 76 -59 Size of sample;
+#X obj 619 -198 cnv 15 400 200 empty empty LOOP 20 12 0 14 -204786
+-66577 0;
+#X obj 705 -155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 637 -124 tabplay~ quack;
+#X obj 672 -83 hsl 50 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 4900 1;
+#X obj 638 -45 dac~;
+#X obj 742 -124 spigot;
+#X obj 775 -157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 637 -84 *~ 1;
+#X text 805 -162 Toggle is 1 or 0;
+#X text 797 -128 if a 1 is received in cold inlet the input is passed
+to output;
+#X text 332 -206 comment;
+#X obj 305 -198 cnv 15 300 200 empty empty TRIGGER 20 12 0 14 -204786
+-66577 0;
+#X obj 323 -156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 323 -125 tabplay~ quack;
+#X obj 358 -84 hsl 50 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 4900 1;
+#X obj 324 -46 dac~;
+#X obj 323 -85 *~ 1;
+#X text 417 -84 limit set to 1 in properties;
+#X text 424 -126 Play array sample;
+#X obj 306 16 cnv 15 300 200 empty empty DELAY_LOOP 20 12 0 14 -204786
+-66577 0;
+#X obj 324 120 tabplay~ quack;
+#X obj 359 151 hsl 50 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 4900 1;
+#X obj 324 179 dac~;
+#X obj 468 137 spigot;
+#X obj 501 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 324 85 delay 500;
+#X floatatom 375 53 5 100 500 0 - - -;
+#X msg 420 51 1000;
+#X obj 324 150 *~ 1;
+#X text 329 57 comment;
+#X text 460 51 delay rate;
+#X text 527 77 start/stop;
+#X connect 1 0 2 0;
+#X connect 4 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 13 0;
+#X connect 8 1 11 0;
+#X connect 9 0 13 1;
+#X connect 11 0 7 0;
+#X connect 12 0 11 1;
+#X connect 13 0 10 0;
+#X connect 13 0 10 1;
+#X connect 18 0 19 0;
+#X connect 19 0 22 0;
+#X connect 20 0 22 1;
+#X connect 22 0 21 0;
+#X connect 22 0 21 1;
+#X connect 26 0 34 0;
+#X connect 26 1 29 0;
+#X connect 27 0 34 1;
+#X connect 29 0 31 0;
+#X connect 30 0 29 1;
+#X connect 30 0 26 0;
+#X connect 31 0 26 0;
+#X connect 32 0 31 1;
+#X connect 33 0 31 1;
+#X connect 34 0 28 0;
+#X connect 34 0 28 1;

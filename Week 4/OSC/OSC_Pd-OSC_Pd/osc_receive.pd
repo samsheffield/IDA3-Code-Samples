@@ -1,0 +1,21 @@
+#N canvas 939 89 442 401 10;
+#X declare -lib mrpeach;
+#X obj 14 67 cnv 15 400 300 empty empty RECEIVE_OSC 20 12 0 14 -47266
+-66577 0;
+#X obj 55 122 udpreceive 6666;
+#X obj 55 149 unpackOSC;
+#X obj 55 255 print;
+#X floatatom 111 211 5 0 0 0 - - -;
+#X obj 67 181 routeOSC /test /monkeys;
+#X floatatom 174 211 5 0 0 0 - - -;
+#X text 119 147 unpack incoming byte array;
+#X text 95 256 print to console;
+#X obj 15 23 import mrpeach;
+#X text 113 16 add mrpeach objects.;
+#X text 111 30 ADD TO PATCHES SENDING OR RECEIVING OSC!;
+#X text 221 180 route according to OSC name;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;

@@ -1,0 +1,66 @@
+#N canvas 57 74 1178 308 10;
+#X obj 212 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 212 183 print;
+#X obj 238 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 264 35 hello;
+#X msg 312 35 10 20;
+#X msg 359 35 10 \, 20;
+#X floatatom 412 36 5 0 0 0 - - -;
+#X obj 453 38 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 3 256;
+#X text 254 182 prints input to console;
+#X obj 644 79 metro 500;
+#X obj 644 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 695 34 5 0 0 0 - - -;
+#X obj 644 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 740 33 2000;
+#X obj 799 74 metro 500;
+#X obj 799 31 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 850 29 5 0 0 0 - - -;
+#X obj 799 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 895 28 2000;
+#X obj 825 134 print;
+#X msg 826 109 hello there;
+#X obj 958 73 metro 500;
+#X obj 958 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 1009 28 5 0 0 0 - - -;
+#X obj 958 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1054 27 2000;
+#X obj 957 162 print;
+#X msg 958 137 hello there;
+#X obj 20 39 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 20 99 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 1;
+#X connect 13 0 9 1;
+#X connect 14 0 17 0;
+#X connect 14 0 20 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 1;
+#X connect 18 0 14 1;
+#X connect 20 0 19 0;
+#X connect 21 0 24 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 1;
+#X connect 24 0 27 0;
+#X connect 25 0 21 1;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;

@@ -1,0 +1,85 @@
+#N canvas 29 22 1254 680 10;
+#X obj 49 92 cnv 15 380 300 empty empty MIDI_NOTE_TO_FREQUENCY 20 12
+0 14 -233017 -66577 0;
+#X text 64 360 midi note list: http://www.phys.unsw.edu.au/jw/notes.html
+;
+#X obj 59 200 mtof;
+#X obj 60 229 sig~;
+#X text 99 200 convert midi note to frequency;
+#X text 100 227 create audio signal;
+#X obj 60 261 osc~;
+#X obj 61 292 *~ 1;
+#X obj 61 322 dac~;
+#X msg 58 155 60;
+#X msg 91 155 62;
+#X msg 127 155 64;
+#X msg 167 155 65;
+#X msg 205 155 0;
+#X text 208 133 off;
+#X text 60 129 C;
+#X text 93 129 D;
+#X text 128 129 E;
+#X text 168 129 F;
+#X obj 486 38 cnv 15 700 400 empty empty FREQUENCY_EXAMPLES 20 12 0
+14 -203904 -66577 0;
+#X obj 1044 153 *~;
+#X obj 1044 213 env~;
+#X obj 1109 86 vsl 15 64 0 0.5 0 0 empty empty Volume 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 1044 246 - 100;
+#X obj 1045 286 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 1056 184 dac~;
+#X floatatom 1044 88 5 0 0 2 Frequency - -;
+#X obj 757 228 *~;
+#X obj 820 150 vsl 15 64 0 0.5 0 0 empty empty Volume 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 755 279 dac~;
+#X floatatom 755 163 5 0 0 2 Frequency - -;
+#X obj 755 190 osc~;
+#X msg 593 182 440;
+#X obj 1044 121 osc~;
+#X floatatom 568 153 5 0 0 1 frequency - -;
+#X obj 568 214 osc~;
+#X obj 568 247 *~ 1;
+#X obj 567 283 dac~;
+#X text 602 213 oscillator;
+#X text 602 246 amplify;
+#X text 601 282 output;
+#X msg 533 183 0;
+#X text 845 180 set max limit of 1!;
+#X text 1121 160;
+#X obj 1044 -133 cnv 15 140 120 empty empty SOUND_ON/OFF 20 12 0 14
+-259265 -1 0;
+#X msg 1071 -67 \; pd dsp \$1;
+#X obj 1071 -95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 8 1;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 20 0 21 0;
+#X connect 20 0 25 0;
+#X connect 20 0 25 1;
+#X connect 21 0 23 0;
+#X connect 22 0 20 1;
+#X connect 23 0 24 0;
+#X connect 26 0 33 0;
+#X connect 27 0 29 0;
+#X connect 27 0 29 1;
+#X connect 28 0 27 1;
+#X connect 30 0 31 0;
+#X connect 31 0 27 0;
+#X connect 32 0 35 0;
+#X connect 33 0 20 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 36 0 37 1;
+#X connect 41 0 35 0;
+#X connect 46 0 45 0;

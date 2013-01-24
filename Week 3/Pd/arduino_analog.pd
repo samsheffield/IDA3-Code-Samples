@@ -1,0 +1,69 @@
+#N canvas 579 22 850 542 10;
+#X obj 254 19 cnv 15 150 150 empty empty SEND_TO_ARDUINO 20 12 0 14
+-257985 -66577 0;
+#X obj 21 20 cnv 15 222 222 empty empty ARDUINO_SETUP 20 12 0 14 -261234
+-66577 0;
+#X msg 74 81 close;
+#X obj 42 206 send \$0-arduino;
+#X obj 272 109 send \$0-arduino-out;
+#X obj 272 65 receive \$0-arduino;
+#X obj 272 88 arduino 1;
+#X msg 82 171 analogIns 2 1;
+#X obj 22 262 cnv 15 400 260 empty empty ANALOG_INPUT 20 12 0 14 -204786
+-66577 0;
+#X obj 131 301 r \$0-arduino-out;
+#X obj 131 372 route analog;
+#X obj 131 401 route 0 1 2 3 4 5 6 7;
+#X floatatom 39 475 5 0 0 0 - - -;
+#X floatatom 81 475 5 0 0 0 - - -;
+#X floatatom 124 475 5 0 0 0 - - -;
+#X floatatom 167 475 5 0 0 0 - - -;
+#X floatatom 208 475 5 0 0 0 - - -;
+#X floatatom 247 475 5 0 0 0 - - -;
+#X floatatom 287 475 5 0 0 0 - - -;
+#X floatatom 330 475 5 0 0 0 - - -;
+#X floatatom 373 475 5 0 0 0 - - -;
+#X obj 131 343 spigot 0;
+#X obj 176 322 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 92 133 pinMode 11 pwm;
+#X obj 431 261 cnv 15 400 170 empty empty ANALOG_OUTPUT(PWM) 20 12
+0 14 -191407 -66577 0;
+#X obj 527 300 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 524 327 pwm 11 \$1;
+#X msg 558 357 pwm 11 0;
+#X msg 450 329 pwm 11 0.5;
+#X obj 524 392 s \$0-arduino;
+#X text 625 279 set range from 0-1 in properties;
+#X text 601 326 set pin and pwm value;
+#X text 624 357 turn off;
+#X text 198 322 toggle input on/off;
+#X text 135 188 input (pin input);
+#X text 190 132 output;
+#X msg 86 102 devices;
+#X msg 57 61 open 2;
+#X connect 2 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 9 0 21 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 14 0;
+#X connect 11 3 15 0;
+#X connect 11 4 16 0;
+#X connect 11 5 17 0;
+#X connect 11 6 18 0;
+#X connect 11 7 19 0;
+#X connect 11 8 20 0;
+#X connect 21 0 10 0;
+#X connect 22 0 21 1;
+#X connect 23 0 3 0;
+#X connect 25 0 26 0;
+#X connect 26 0 29 0;
+#X connect 27 0 29 0;
+#X connect 28 0 29 0;
+#X connect 36 0 3 0;
+#X connect 37 0 3 0;

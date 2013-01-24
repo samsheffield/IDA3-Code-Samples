@@ -1,0 +1,82 @@
+#N canvas 130 327 1058 512 10;
+#X obj 244 9 cnv 15 150 150 empty empty SEND_TO_ARDUINO 20 12 0 14
+-257985 -66577 0;
+#X obj 11 10 cnv 15 222 222 empty empty ARDUINO_SETUP 20 12 0 14 -261234
+-66577 0;
+#X obj 404 8 cnv 15 160 200 empty empty DIGITAL_OUTPUT 20 12 0 14 -203904
+-66577 0;
+#X msg 64 71 close;
+#X obj 32 196 send \$0-arduino;
+#X obj 262 99 send \$0-arduino-out;
+#X obj 262 55 receive \$0-arduino;
+#X obj 262 78 arduino 1;
+#X msg 78 98 pinMode 13 output;
+#X obj 426 111 send \$0-arduino;
+#X obj 426 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 110 127 pinMode 12 output;
+#X obj 574 9 cnv 15 260 200 empty empty DIGITAL_INPUT 20 12 0 14 -261068
+-66577 0;
+#X obj 594 37 r \$0-arduino-out;
+#X obj 594 64 route digital;
+#X obj 594 92 route 2 3 4 5 6 7 8 9 10 11 12 13;
+#X obj 594 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 611 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 628 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 645 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 662 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 679 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 696 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 713 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 730 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 747 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 764 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 781 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 798 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 446 40 HIGH/LOW;
+#X text 592 149 HIGH/LOW states of pins NOTE: pins 0 & 1 are not used!
+;
+#X msg 119 56 devices;
+#X msg 47 51 open 2;
+#X msg 426 75 digital 12 \$1;
+#X msg 109 164 pinMode 2 input;
+#X msg 158 197 pinMode 3 input;
+#X connect 3 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
+#X connect 10 0 33 0;
+#X connect 11 0 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 15 2 18 0;
+#X connect 15 3 19 0;
+#X connect 15 4 20 0;
+#X connect 15 5 21 0;
+#X connect 15 6 22 0;
+#X connect 15 7 23 0;
+#X connect 15 8 24 0;
+#X connect 15 9 25 0;
+#X connect 15 10 26 0;
+#X connect 15 11 27 0;
+#X connect 15 12 28 0;
+#X connect 31 0 4 0;
+#X connect 32 0 4 0;
+#X connect 33 0 9 0;
+#X connect 34 0 4 0;
+#X connect 35 0 4 0;

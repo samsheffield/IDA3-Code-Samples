@@ -1,0 +1,46 @@
+#N canvas 417 22 947 451 10;
+#X declare -lib mrpeach;
+#X obj 287 11 import mrpeach;
+#X obj 75 97 cnv 15 400 300 empty empty SEND_OSC 20 12 0 14 -256468
+-66577 0;
+#X obj 485 96 cnv 15 400 300 empty empty RECEIVE_OSC 20 12 0 14 -47266
+-66577 0;
+#X obj 94 339 udpsend;
+#X msg 94 156 connect localhost 6666;
+#X msg 106 182 disconnect;
+#X obj 147 297 packOSC;
+#X text 205 296 pack message as a byte array;
+#X msg 147 262 send /test \$1;
+#X obj 147 216 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 280 215 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 0;
+#X msg 277 262 send /monkeys \$1;
+#X obj 526 151 udpreceive 6666;
+#X obj 526 178 unpackOSC;
+#X obj 526 284 print;
+#X floatatom 582 240 5 0 0 0 - - -;
+#X obj 538 210 routeOSC /test /monkeys;
+#X floatatom 645 240 5 0 0 0 - - -;
+#X text 385 4 add mrpeach objects. ADD TO PATCHES SENDING OR RECEIVING
+OSC!;
+#X text 146 342 send OSC;
+#X text 386 264 *;
+#X text 240 346 * OSC messages are prefixed with a / * Message variables
+are prefixed a $;
+#X text 234 262 *;
+#X text 590 176 unpack incoming byte array;
+#X text 692 209 route accordung to OSC name;
+#X text 566 285 print to console;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 0 16 0;
+#X connect 16 0 15 0;
+#X connect 16 1 17 0;

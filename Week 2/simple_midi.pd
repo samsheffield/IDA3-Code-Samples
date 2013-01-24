@@ -1,0 +1,70 @@
+#N canvas 158 322 692 457 10;
+#X text 446 26;
+#X obj 13 16 cnv 15 655 200 empty empty NOTEOUT_EXAMPLES 20 12 0 14
+-261682 -66577 0;
+#X obj 453 160 noteout;
+#X obj 453 95 metro 100;
+#X floatatom 504 60 5 0 0 0 - - -;
+#X obj 36 164 noteout;
+#X msg 36 128 60 100 2;
+#X obj 128 164 noteout;
+#X msg 128 129 60 100 1;
+#X obj 236 162 noteout;
+#X floatatom 215 128 5 0 0 0 - - -;
+#X floatatom 255 128 5 0 0 0 - - -;
+#X floatatom 298 128 5 0 0 0 - - -;
+#X text 251 106 velocity;
+#X text 211 108 note;
+#X text 309 107 channel;
+#X msg 453 129 64 100 1;
+#X obj 427 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 453 62 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 546 57 rate;
+#X text 517 129 note velocity channel;
+#X text 49 55;
+#X text 32 45 WARNING: MIDI instrument may not turn off! Make sure
+MIDI output is set in Preferences;
+#X obj 14 228 cnv 15 655 200 empty empty MAKENOTE! 20 12 0 14 -262130
+-66577 0;
+#X floatatom 468 321 5 0 0 0 - - -;
+#X floatatom 512 321 5 0 0 0 - - -;
+#X floatatom 413 323 5 0 0 0 - - -;
+#X msg 348 323 60;
+#X msg 381 323 71;
+#X text 357 300 note;
+#X text 474 297 velocity;
+#X text 557 322 duration in ms;
+#X floatatom 483 366 5 0 0 0 - - -;
+#X text 525 365 channel;
+#X obj 413 359 makenote;
+#X obj 413 296 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 413 389 noteout 1;
+#X msg 262 323 60 64 500;
+#X text 33 257 Turns off MIDI instrument after duration Make sure MIDI
+output is set in Preferences;
+#X text 276 373 Connect both outlets!;
+#X text 294 162 sends note to MIDI;
+#X text 215 323 n v d;
+#X connect 3 0 16 0;
+#X connect 3 0 17 0;
+#X connect 4 0 3 1;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 2;
+#X connect 16 0 2 0;
+#X connect 18 0 3 0;
+#X connect 24 0 34 1;
+#X connect 25 0 34 2;
+#X connect 26 0 34 0;
+#X connect 27 0 34 0;
+#X connect 28 0 34 0;
+#X connect 32 0 36 2;
+#X connect 34 0 36 0;
+#X connect 34 1 36 1;
+#X connect 35 0 26 0;
+#X connect 37 0 34 0;

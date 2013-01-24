@@ -1,0 +1,76 @@
+#N canvas 195 54 838 582 10;
+#X obj 395 54 cnv 15 320 270 empty empty MIC_INPUT 20 12 0 14 -257985
+-66577 0;
+#X obj 415 127 adc~;
+#X obj 415 165 bonk~;
+#X floatatom 415 200 5 0 0 0 - - -;
+#X text 464 167 look for peaks;
+#X text 395 31;
+#X obj 27 55 cnv 15 320 200 empty empty KEYBOARD_INPUT 20 12 0 14 -260097
+-66577 0;
+#X obj 48 108 key;
+#X floatatom 48 135 3 0 0 0 - - -;
+#X floatatom 87 134 3 0 0 0 - - -;
+#X obj 87 108 keyup;
+#X floatatom 141 134 3 0 0 0 - - -;
+#X obj 141 108 keyname;
+#X symbolatom 192 133 10 0 0 0 - - -;
+#X obj 48 159 bng 15 50 10 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 87 159 bng 15 50 10 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 141 159 bng 15 50 10 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 27 298 cnv 15 320 220 empty empty MOUSE_INPUT 20 12 0 14 -97664
+-66577 0;
+#X obj 59 391 MouseState;
+#X obj 59 459 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 131 438 5 0 0 0 - - -;
+#X floatatom 177 433 5 0 0 0 - - -;
+#X floatatom 86 443 5 0 0 0 - - -;
+#X floatatom 224 426 5 0 0 0 - - -;
+#X obj 59 361 metro 50;
+#X obj 59 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 95 460 x;
+#X text 141 454 y;
+#X text 175 450 dist x;
+#X text 222 443 dist y;
+#X text 35 477 button press;
+#X obj 415 226 moses 20;
+#X obj 415 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 460 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 413 84 (Make sure Audio input is set in Preferences & Media
+> audio ON);
+#X floatatom 460 199 5 0 0 0 - - -;
+#X text 501 199 threshold;
+#X floatatom 415 254 5 0 0 0 - - -;
+#X floatatom 460 254 5 0 0 0 - - -;
+#X text 476 225 chooses outlet based on threshold;
+#X text 415 295 <;
+#X text 465 296 >;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 31 0;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 15 0;
+#X connect 10 0 9 0;
+#X connect 11 0 16 0;
+#X connect 12 0 11 0;
+#X connect 12 1 13 0;
+#X connect 18 0 19 0;
+#X connect 18 1 22 0;
+#X connect 18 2 20 0;
+#X connect 18 3 21 0;
+#X connect 18 4 23 0;
+#X connect 24 0 18 0;
+#X connect 25 0 24 0;
+#X connect 31 0 37 0;
+#X connect 31 1 38 0;
+#X connect 35 0 31 1;
+#X connect 37 0 32 0;
+#X connect 38 0 33 0;

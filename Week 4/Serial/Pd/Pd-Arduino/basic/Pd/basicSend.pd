@@ -1,0 +1,20 @@
+#N canvas 166 278 575 400 10;
+#X msg -241 -15 devices;
+#X msg -180 -15 open 2;
+#X msg -182 28 close;
+#X obj -241 69 comport 2 9600;
+#X text -125 -16 Arduino's port number;
+#X text -145 68 port can also be set here;
+#X msg -326 29 100;
+#X floatatom -325 -10 5 0 255 0 - - -;
+#X text -407 -12 0-255 range;
+#X obj -325 -45 hsl 60 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text -274 114 comport connects to Arduino;
+#X text -126 -37;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 9 0 3 0;

@@ -1,0 +1,84 @@
+#N canvas 65 22 1059 624 10;
+#X obj -427 -151 cnv 15 440 260 empty empty SETUP 20 12 0 14 -204800
+-66577 0;
+#X msg -271 -80 devices;
+#X msg -210 -80 open 2;
+#X msg -211 -37 close;
+#X obj -271 4 comport 2 9600;
+#X obj -271 37 s arduinoIn;
+#X msg -403 -37 0;
+#X obj -403 23 s resetInput;
+#X text -156 -102 CLICK 1ST;
+#X text -155 -81 Arduino's port number;
+#X text -175 3 port can also be set here;
+#X obj -403 -102 bng 30 250 50 0 empty empty empty 17 7 0 10 -4160
+-262144 -1;
+#X text -366 -97 CLICK 2ND;
+#X text -409 78 *resets array index & starts Arduino communication
+;
+#X text -323 24 *;
+#X obj 23 -151 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 65 -130 table array1;
+#X text 150 -137 array to hold incoming data;
+#X text 150 -120 set array size to match no. of inputs;
+#X obj 86 122 cnv 15 440 200 empty empty SHOW_INPUT 20 12 0 14 -261682
+-66577 0;
+#X obj 210 238 tabread array1;
+#X obj 306 238 tabread array1;
+#X obj 401 238 tabread array1;
+#X obj 114 238 tabread array1;
+#X msg 114 209 0;
+#X msg 210 209 1;
+#X msg 306 207 2;
+#X msg 401 208 3;
+#X floatatom 114 267 5 0 0 0 - - -;
+#X floatatom 210 267 5 0 0 0 - - -;
+#X floatatom 306 265 5 0 0 0 - - -;
+#X floatatom 401 267 5 0 0 0 - - -;
+#X text 438 206 array index;
+#X obj 254 158 r readArray;
+#X text 111 294 Format input to 0-255 range with Arduino!;
+#X obj -427 121 cnv 15 500 250 empty empty HANDLE_INPUT 20 12 0 14
+-261234 -66577 0;
+#X floatatom -240 302 5 0 0 0 - - -;
+#X obj -327 335 tabwrite array1;
+#X obj -240 252 cup;
+#X obj -240 277 % 4;
+#X obj -394 153 r arduinoIn;
+#X obj -233 225 r resetInput;
+#X text -210 277 size of array;
+#X text -151 229 *;
+#X obj -394 183 trigger bang float bang;
+#X text -243 172 trigger outlets in R-L order;
+#X text -204 302 index to write to;
+#X obj -399 215 s readArray;
+#X text -241 192 1 increase index \, 2 write to array \, 3 read array
+;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;
+#X connect 6 0 7 0;
+#X connect 11 0 6 0;
+#X connect 20 0 29 0;
+#X connect 21 0 30 0;
+#X connect 22 0 31 0;
+#X connect 23 0 28 0;
+#X connect 24 0 23 0;
+#X connect 25 0 20 0;
+#X connect 26 0 21 0;
+#X connect 27 0 22 0;
+#X connect 33 0 24 0;
+#X connect 33 0 25 0;
+#X connect 33 0 26 0;
+#X connect 33 0 27 0;
+#X connect 36 0 37 1;
+#X connect 38 0 39 0;
+#X connect 39 0 36 0;
+#X connect 40 0 44 0;
+#X connect 41 0 38 0;
+#X connect 44 0 47 0;
+#X connect 44 1 37 0;
+#X connect 44 2 38 0;

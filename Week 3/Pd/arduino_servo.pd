@@ -1,0 +1,59 @@
+#N canvas 210 128 865 386 10;
+#X obj 254 19 cnv 15 150 150 empty empty SEND_TO_ARDUINO 20 12 0 14
+-257985 -66577 0;
+#X obj 21 20 cnv 15 222 222 empty empty ARDUINO_SETUP 20 12 0 14 -261234
+-66577 0;
+#X msg 74 84 close;
+#X obj 42 206 send \$0-arduino;
+#X obj 272 109 send \$0-arduino-out;
+#X obj 272 65 receive \$0-arduino;
+#X obj 272 88 arduino 1;
+#X obj 415 19 cnv 15 430 330 empty empty ANALOG_OUTPUT(SERVO) 20 12
+0 14 -203904 -66577 0;
+#X obj 519 209 hsl 128 15 0.1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 516 301 s \$0-arduino;
+#X text 634 266 turn off;
+#X text 190 130 output;
+#X msg 83 106 devices;
+#X msg 57 61 open 2;
+#X obj 554 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 554 105 delay 500;
+#X obj 523 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 554 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 92 131 pinMode 9 servo;
+#X msg 516 236 analog 9 \$1;
+#X text 621 188 set range from 0.1-1 in properties;
+#X text 593 235 set pin and analog value;
+#X msg 431 236 analog 9 0.5;
+#X text 586 152 0.1 NOT 0 to shut off;
+#X text 574 128 just to visualize delay...;
+#X msg 516 156 0.4;
+#X floatatom 605 75 5 0 0 0 - - -;
+#X text 104 60 is port # correct?;
+#X text 135 104 ports;
+#X msg 550 266 analog 9 0.1;
+#X msg 554 155 0.1;
+#X text 37 293 Tested using StandardFirmata (OK!) \, AnalogFirmata
+(OK!) \, and ServoFirmata (OK!);
+#X connect 2 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 8 0 19 0;
+#X connect 12 0 3 0;
+#X connect 13 0 3 0;
+#X connect 14 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 25 0;
+#X connect 17 0 30 0;
+#X connect 18 0 3 0;
+#X connect 19 0 9 0;
+#X connect 22 0 9 0;
+#X connect 25 0 8 0;
+#X connect 26 0 15 1;
+#X connect 29 0 9 0;
+#X connect 30 0 8 0;
